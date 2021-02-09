@@ -12,4 +12,4 @@ type BuscarTienda struct {
 }
 
 var TiendasGeneral = make(map[string]BuscarTienda)
-var Id int
+var NumeroTiendas int
