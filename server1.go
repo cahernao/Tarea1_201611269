@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"time"
 
+	. "github.com/chno2016/Tarea1_201611269_30-01-2021/Handlers"
+
 	"github.com/gorilla/mux"
 )
 
@@ -14,12 +16,12 @@ func main() {
 	r := mux.NewRouter().StrictSlash(false)
 
 	//endpoint
-	r.HandleFunc("/cargartienda", GetTiendaHandler).Methods("GET")
-	r.HandleFunc("/getArreglo", GetArregloHandler).Methods("GET")
+	//r.HandleFunc("/cargartienda", GetTiendaHandler).Methods("GET")
+	//r.HandleFunc("/getArreglo", GetArregloHandler).Methods("GET")
 	r.HandleFunc("/TiendaEspecifica", PostTiendaEspecificaHandler).Methods("POST")
-	r.HandleFunc("/id/{numero}", GetTiendaEspecializadaHandler).Methods("GET")
-	r.HandleFunc("/Eliminar", GetArregloHandler).Methods("GET")
-	r.HandleFunc("/Guardar", PostArregloHandler).Methods("POST")
+	//r.HandleFunc("/id/{numero}", GetTiendaEspecializadaHandler).Methods("GET")
+	//r.HandleFunc("/Eliminar", GetArregloHandler).Methods("GET")
+	//r.HandleFunc("/Guardar", PostArregloHandler).Methods("POST")
 
 	server := &http.Server{
 		Addr:           "3000",
