@@ -11,5 +11,9 @@ type BuscarTienda struct {
 	Calificacion int    `json:"Calificacion"`
 }
 
+type Departamento struct{
+	Nombre string `json:",omitempty"`
+	Tiendas []Tienda
+}
+
 var TiendasGeneral = make(map[string]BuscarTienda)
-var NumeroTiendas int = 0
