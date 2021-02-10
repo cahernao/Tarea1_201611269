@@ -18,8 +18,8 @@ var MiLista []BuscarTienda
 var index int
 
 type depa struct {
-	Nombre1 string         `json:"-"`
-	Tiendas []BuscarTienda `json:""`
+	Nombre1 string         `json:",BuscarTienda"`
+	Tiendas []BuscarTienda `json:",string"`
 }
 
 //PostTiendaEspecificaHandler - POST - TiendaEspecifica
