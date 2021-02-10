@@ -16,4 +16,8 @@ type Departamento struct{
 	Tiendas []Tienda
 }
 
+func IniciarDepartamento() *Departamento{
+	return &Departamento{}
+}
+
 var TiendasGeneral = make(map[string]BuscarTienda)
