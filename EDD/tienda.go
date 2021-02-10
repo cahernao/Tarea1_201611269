@@ -1,8 +1,8 @@
 package EDD
 
 type Tienda struct {
-	nombre, descripcion, contacto string
-	calificacion                  int
+	Nombre, Descripcion, Contacto string
+	Calificacion                  int
 }
 
 type BuscarTienda struct {

@@ -17,6 +17,11 @@ import (
 var MiLista []BuscarTienda
 var index int
 
+type depa struct {
+	Nombre1 string         `json:"-"`
+	Tiendas []BuscarTienda `json:"`Nombre1`"`
+}
+
 //PostTiendaEspecificaHandler - POST - TiendaEspecifica
 func PostTiendaEspecificaHandler(w http.ResponseWriter, r *http.Request) {
 	reqBody, _ := ioutil.ReadAll(r.Body)
@@ -76,23 +81,33 @@ func PostTiendaEspecificaHandler(w http.ResponseWriter, r *http.Request) {
 
 **/
 
+//GetPrueba1Handler - Usando prueba para ver como funciona
 func GetPrueba1Handler(w http.ResponseWriter, r *http.Request) {
 
-	var miDepa Departamento{}
-	var miT []Tienda
+	var miDepa depa
+	var miT []BuscarTienda
+	var strin1, strin2 string
 	for i := 0; i < 5; i++ {
-		t := Tienda{CadenaRandom(), CadenaRandom(), 3}
+		strin1 = CadenaRandom()
+		strin2 = CadenaRandom()
+		t := BuscarTienda{strin1, strin2, 3}
 		miT = append(miT, t)
 	}
 
-	miDepa.Nombre = CadenaRandom()
-	miDepa.Tiendas=miT
+	miDepa.Nombre1 = CadenaRandom()
+	miDepa.Tiendas = miT
+
+	w.WriteHeader(http.StatusAccepted)
+	json.NewEncoder(w).Encode(miDepa)
 
 }
+
+//RutaInicial - Usamos esto con la tarea de lab de edd
 func RutaInicial(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Carlos Hernandez 20161169")
 }
 
+//cadenaRandom - pa que
 func CadenaRandom() string {
 	var output strings.Builder
 	charSet := "abcdedfghijklmnopqrstABCDEFGHIJKLMNOP"
