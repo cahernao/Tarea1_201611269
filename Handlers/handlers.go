@@ -19,7 +19,7 @@ var index int
 
 type depa struct {
 	Nombre1 string         `json:"-"`
-	Tiendas []BuscarTienda `json:"`Nombre1`"`
+	Tiendas []BuscarTienda `json:""`
 }
 
 //PostTiendaEspecificaHandler - POST - TiendaEspecifica
